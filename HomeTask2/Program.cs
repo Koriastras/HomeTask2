@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 
 namespace VariablesDemo
 {
@@ -9,26 +9,13 @@ namespace VariablesDemo
             Console.Write("About which language do you want to know information? 1 - English, 2 - Spanish, 3 - Ukrainian ");
             string line = Console.ReadLine();
             byte languageValue;
-            if (byte.TryParse(line, out languageValue))
-            {
-                byte chosen_language = byte.Parse(line);
-                if (chosen_language <= 3 && chosen_language != 0)
-                {
-                    Console.WriteLine($"With 2,500 to 3,000 words, you can understand 90% of everyday {(Language)languageValue} conversations,");
-                    Console.WriteLine($"{(Language)languageValue} newspaper and magazine articles, and {(Language)languageValue} used in the workplace.");
-                    Console.WriteLine($"So it is essential to learn the right {(Language)languageValue} vocabulary words.");
-                   
-                }
-                else
-                    Console.WriteLine("Please follow the instructions and try again");
-
-            }
-            else
-
+          
+            if (byte.TryParse(line, out languageValue) && byte.Parse(line) <= 3)
             {
 
-                Console.WriteLine("Please follow the instructions and try again");
-
+                Console.WriteLine($"With 2,500 to 3,000 words, you can understand 90% of everyday {(Language)languageValue} conversations,");
+                Console.WriteLine($"{(Language)languageValue} newspaper and magazine articles, and {(Language)languageValue} used in the workplace.");
+                Console.WriteLine($"So it is essential to learn the right {(Language)languageValue} vocabulary words.");
             }
         }
 
